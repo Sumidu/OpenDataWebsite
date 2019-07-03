@@ -1,0 +1,140 @@
+---
+title: "Name Of Project"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: embed
+    orientation: rows
+    social: [ "menu" ]
+    vertical_layout: scroll
+    theme: bootstrap
+---
+
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(plotly)
+library(DT)
+library(dygraphs)
+```
+
+# Introduction {data-icon="fa-home"}
+
+In this field you will see an introductory text to this open-data website
+
+* A
+* B
+* C
+
+
+Create your own open-data websites by looking at our source-code in the top right corner.
+
+# Method {data-orientation=columns}
+
+### Method Description
+
+Test ABS
+
+* A
+* B
+* C
+
+Links can be included as well
+[Google](http://www.google.com)
+
+Method Figures
+-----------
+
+
+### Method 1
+
+Aha
+```{r}
+p <- ggplot(cars) + aes(x = speed, y = dist) + geom_point()
+ggplotly(p)
+```
+
+### Method 2
+
+```{r}
+p <- ggplot(cars) + aes(x = speed, y = dist) + geom_point()
+ggplotly(p)
+```
+
+
+
+
+
+
+# Results
+
+Row 
+-------------------------------------
+
+### Chart 1
+```{r}
+
+```
+
+
+Row {.tabset .tabset-fade}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+```   
+ 
+### Chart 3
+    
+```{r}
+```
+
+
+Row
+-------------------------------------
+
+### Test 123
+
+# Discussion
+### Chart 1
+```{r}
+dygraph(cars)
+```
+
+# Data 
+
+
+Row {.tabset .tabset-fade}
+-------------------------------------
+
+### Data: mpg {data-height=800}
+
+```{r}
+datatable(mpg, filter = list(position = 'top', clear = TRUE, plain = FALSE), extensions = c('Buttons','FixedColumns'), options = list(
+    dom = 'Bfrtip',
+    buttons = c('copy', 'csv', 'excel', 'pdf'),
+    scrollX = TRUE,
+    fixedColumns = TRUE
+  ))
+```   
+ 
+### Data: other
+    
+```{r}
+```
+
+
+
+
+# Sidebar {.sidebar}
+
+**Welcome**
+
+Here we have general text that can help you orient yourself.
+
+* You may share a link to this website using the share button in the top right corner.
+* The [Data] page contains a table browser for each dataset used in this study. You may also download the data as *CSV* or *Excel* files for your own analysis.
+
+
